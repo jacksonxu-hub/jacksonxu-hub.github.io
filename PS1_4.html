@@ -1,0 +1,25 @@
+<head>
+    <meta charset="utf-8">
+    <title>Problem 4</title>
+    </head>
+    
+    <body>
+        <script>
+            
+            fnum= parseFloat(prompt("Enter the first number (start of range)", "1"));
+            snum= prompt("Enter the second number (end of range)", "18");
+            
+            let sum=0;
+            let text="";
+            
+            
+            for (i=fnum;i<=snum;i++){
+                sum+=parseFloat(i);
+                if (parseFloat(i)%2==1)
+                    text=text.concat(" ",String(i));
+
+            }
+            document.write("Odd numbers in this range are "+ text+"<br />")
+            document.write("Sum of the numbers in the range is "+sum)
+            </script>
+    </body>

@@ -1,0 +1,27 @@
+<head>
+    <meta charset="utf-8">
+    <title>Problem 3</title>
+    </head>
+    
+    <body>
+        <script>
+            
+            thres= prompt("Enter the threshold number here", "1");
+            let counter = 0;
+            function CreateArray(){
+                narray=[5,90,24,6,20,626,234,9,2,67,25]
+                return narray
+            }
+
+            function Count(iarray,threshold){
+                for (i=0;i<iarray.length;i++){
+                    if (threshold>iarray[i])
+                        counter++;
+                }
+                document.write(counter)
+            }
+            input=CreateArray()
+            Count(input,thres)
+            
+            </script>
+    </body>
