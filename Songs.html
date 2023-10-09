@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Wedding Band Songs</title>
+        <link rel="stylesheet" href="./navbar.css">
+        <link href="https://fonts.googleapis.com/css?family=Allura" rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Tangerine" rel='stylesheet'>
+        
+        <style type="text/css">
+            html{font-family: sans-serif;}
+            
+            div.list{text-align: center}
+            select {
+                width:80%;
+                height: 60px;
+                border-radius: 5px;
+                border: 10px;
+                cursor:move;
+                margin-left: 10%;
+                
+            }
+            div.ficons{
+            display: flex;
+            position: sticky;
+            top: 200px;
+            float:right;
+            right: 60px;
+            align-content: flex-end;}
+            ul{ text-align:left; display: inline-block;
+                }
+            h2{font-size:50px;font-family:"Tangerine";width: 100%;
+                text-align: center; display: inline-block; color: burlywood;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="navbar">
+            
+            <a href="http://jacksoncs120.com/Homepage.html">Home</a>
+            <a href="http://jacksoncs120.com/Contact.html">Contact</a>
+            <a href="http://jacksoncs120.com/Bio.html">Bio</a>
+            <a href="http://jacksoncs120.com/Songs.html">Songs</a>
+            
+        </div>
+        <div class="ficons">
+            <a href="https://www.tiktok.com/en/" style="text-decoration:none;"><img align = "right" src= './Tiktok.jpg'   wideth = "10" height="20"> </a>
+            <a href="https://www.facebook.com/facebook/" style="text-decoration:none;"><img align = "right" src= './Facebook.png'   wideth = "10" height="20">  </a> 
+        </div>
+        <div class="img">
+            <div class="bgtext"
+                <p>
+                <span style=center>Where TRUE love begins</span><br />	
+         </p>  
+
+         Songs = [									//array of Person's
+	
+	new Song("Hotel California", "Eagles",['Rock']),
+    new Song("Smells Like Teen Spirit", "Nirvana",['Rock']),
+    new Song("Watermelon Sugar", "Harry Styles",['Pop']),
+    new Song("Drivers License", "Olivia Rodrigo",['Pop']),
+    new Song("Dynamite", "BTS",['Pop']),
+    new Song("Wagon Wheel", "Darius Rucker",['Country']),
+    new Song("The House That Built Me", "Miranda Lambert",['Country']),
+    new Song("Before He Cheats", "Carrie Underwood",['Country']),
+    new Song("One Step Closer", "Linkin Park",['Metal','Rock'])
+
+	]
+        </div>  
+        </div>  
+        <br />	
+        <h2>Our Songs</h2>
+        <form >
+            
+            <select name="Pop">
+                <option data-count="1" value="Pop">Pop</option>
+                <option data-count="2" value="Blinding Lights">Blinding Lights</option>
+                <option data-count="3" value="Watermelon Sugar">Watermelon Sugar</option>
+                <option data-count="4" value="drivers license">drivers license</option>
+                <option data-count="5" value="Dynamite">Dynamite</option>
+                
+               
+            </select>
+            <br />	<br />	
+            <select name="Rock">
+                <option data-count="7" value="Rock">Rock</option>
+                <option data-count="6" value="Stairway to Heaven">Stairway to Heaven</option>
+                <option data-count="23" value="Bohemian Rhapsody">Bohemian Rhapsody</option>
+                <option data-count="8" value="Smells Like Teen Spirit">Smells Like Teen Spirit</option>
+                <option data-count="9" value="Hotel California">Hotel California</option>
+               
+            </select>
+            <br />	<br />	
+            <select name="Hip Hop">
+                <option data-count="2" value="Hip Hop">Hip Hop</option>
+                <option data-count="23" value="God's Plan">God's Plan</option>
+                <option data-count="433" value="Lose Yourself">Lose Yourself</option>
+                <option data-count="45" value="SICKO MODE">SICKO MODE</option>
+                <option data-count="45" value="Old Town Road">Old Town Road</option>
+               
+            </select>
+            <br />	<br />		
+            <select name="Country">
+                <option data-count="2" value="Country">Country</option>
+                <option data-count="23" value="Wagon Wheel">Wagon Wheel</option>
+                <option data-count="433" value="The House That Built Me">The House That Built Me</option>
+                <option data-count="45" value="Before He Cheats">Before He Cheats</option>
+               
+            </select>
+            <br />	<br />	
+        
+          </form>
+          <h2>Our Prices</h2>
+
+          <div class="list">
+            <ul>
+                
+                    <li>3-5 Pieces: $2500</li>
+                    <li>5-7 Pieces: $4000</li>
+                    <li>Holiday Courtesy Fee: $500</li>
+            
+            </ul>
+        </div>
+    </body>
+</html>
