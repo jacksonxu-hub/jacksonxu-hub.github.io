@@ -1,0 +1,74 @@
+[
+    {
+		"Title" : "Stairway to Heaven",
+		"Artist"  : "Led Zeppelin",
+		"Genre"	 : ["Rock"],
+        "Released" : "1971"
+		}, 
+ {
+		"Title" : "Hotel California",
+		"Artist"  : "Eagles",
+		"Genre"	 : ["Rock"],
+        "Released": "1976"
+		
+},
+ {
+		"Title" : "Smells Like Teen Spirit",
+		"Artist"  : "Nirvana",
+		"Genre"	 : ["Rock"],
+        "Released": "1991"
+		
+        
+},
+ {
+		"Title" : "One Step Closer",
+		"Artist"  : "Linkin Park",
+		"Genre"	 : ["Metal"," Rock"],
+        "Released": "2000"
+		
+        
+},
+{
+		"Title" : "Watermelon Sugar",
+		"Artist"  : "Harry Styles",
+		"Genre"	 : ["Pop"],
+        "Released":"2019"
+
+        
+},
+ {
+		"Title" : "Drivers License",
+		"Artist"  : "Olivia Rodrigo",
+		"Genre"	 : ["Pop"],
+        "Released":"2021"
+        
+},
+{
+		"Title" : "Dynamite",
+		"Artist"  : "BTS",
+		"Genre"	 : ["Pop"],
+        "Released":"2020"
+        
+},
+{
+		"Title" : "Wagon Wheel",
+		"Artist"  : "Darius Rucker",
+		"Genre"	 : ["Country"],
+        "Released":"2013"
+        
+},
+ {
+		"Title" : "The House That Built Me",
+		"Artist"  : "Miranda Lambert",
+		"Genre"	 : ["Country"],
+        "Released":"2009"
+        
+},
+ {
+		"Title" : "Before He Cheats",
+		"Artist"  : "Carrie Underwood",
+		"Genre"	 : ["Country"],
+        "Released":"2005"
+}
+
+]
