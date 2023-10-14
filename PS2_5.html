@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date Demo</title>
+<script>
+    items=["Item1","Item2","Item3","Item4","Item5"];
+    prices=[5,6,7,10,4];
+    included=[]
+    order=
+    total_cost=0;
+   
+    function create_form(){
+        
+		//strSelected = q+" "+st+" for "+prices[sv]+ " each";
+        states=['California','Vermont','Massachusetts','Montana','North Carolina','South Carolina','Florida','Georgia','New York','Delaware'];
+        state_str="<select id='selection' size='10'>"+"<option selected value=" + "0"+ ">" +states[0]+"</option>"
+        for (i=1;i<states.length;i++){
+            state_str+="<option value=" + i+ ">" +states[i]+"</option>" 
+        }
+        state_str+="</select>"
+            console.log(state_str)
+            document.write(state_str)
+    }
+    function add_display(){
+        s_i = selection.selectedIndex;
+		st2 = selection.options[s_i].text;
+		sv2 = parseInt(selection.options[s_i].value);
+        included.push(st2)
+        document.getElementById("output").innerHTML += st2+", "
+        
+            document.getElementById('selection').innerHTML=state_str
+    }
+    function res(){
+        total_cost=0
+        order=new Array()
+        
+        document.getElementById("output").innerHTML = ""
+    }
+</script>
+<style>
+    .emptyspace{
+        height:200px; 
+        width:300px; 
+        border: 1px solid black;
+    }
+</style>
+</head>
+
+<body>
+
+        <script>create_form()</script>
+        <input type='button' value="Add State" 
+       onclick="add_display()" style="display:inline-flexbox; float:left;">
+       
+
+
+    
+    <br>
+    <div class="emptyspace" id='output' > </div>
+    
+    <br>
+    <input type='button' value="Clear States" 
+       onclick="res()"><br>
+    
+    </body>
+
+</html>
