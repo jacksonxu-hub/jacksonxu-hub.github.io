@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Unit 2 PS2_4</title>
+        <script>
+            
+            function speak(){
+                name=document.getElementById("name").value;
+                let bt=event.target.value;
+                alert(bt+" "+name);
+                
+            }
+            window.onload=function() {
+
+            hello= document.getElementById("1");
+            gb= document.getElementById("2");
+            gr= document.getElementById("3");
+            hello.onclick = function()  {speak();}
+            gb.onclick = function() {speak();}
+            gr.onclick=function() {speak();}
+            }
+        </script>
+    </head>
+    <body>
+        
+        <form >
+            
+            <label text-align="right" for="name">User's name:</label>
+            <input type="text" id="name" value="jack">
+        </form>
+        <br>
+        <input type='button' value="Hello" id="1">
+       <input type='button' value="Good Bye" id="2">
+       <input type='button' value="Greetings" id="3">
+        
+
+    </body>
+</html>
