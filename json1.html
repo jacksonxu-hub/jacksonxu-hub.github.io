@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>json1</title>
+        <script language="javascript">
+            
+        song1 = {
+		'Title' : "Stairway to Heaven",
+		'Artist'  : "Led Zeppelin",
+		'Genre'	 : ['Rock'],
+		'Year': "1971",
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song2 = {
+		'Title' : "Hotel California",
+		'Artist'  : "Eagles",
+		'Genre'	 : ['Rock'],
+		'Year':['1977'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song3 = {
+		'Title' : "Smells Like Teen Spirit",
+		'Artist'  : "Nirvana",
+		'Genre'	 : ['Rock'],
+		'Year':['1991'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song4 = {
+		'Title' : "One Step Closer",
+		'Artist'  : "Linkin Park",
+		'Genre'	 : ['Metal',' Rock'],
+		'Year':['2000'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song5 = {
+		'Title' : "Watermelon Sugar",
+		'Artist'  : "Harry Styles",
+		'Genre'	 : ['Pop'],
+		'Year':['2019'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song6 = {
+		'Title' : "Drivers License",
+		'Artist'  : "Olivia Rodrigo",
+		'Genre'	 : ['Pop'],
+		'Year':['2021'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song7 = {
+		'Title' : "Dynamite",
+		'Artist'  : "BTS",
+		'Genre'	 : ['Pop'],
+		'Year':['2020'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song8 = {
+		'Title' : "Wagon Wheel",
+		'Artist'  : "Darius Rucker",
+		'Genre'	 : ['Country'],
+		'Year':['2013'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song9 = {
+		'Title' : "The House That Built Me",
+		'Artist'  : "Miranda Lambert",
+		'Genre'	 : ['Country'],
+		'Year': ['2009'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+"'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+song10 = {
+		'Title' : "Before He Cheats",
+		'Artist'  : "Carrie Underwood",
+		'Genre'	 : ['Country'],
+		'Year':['2005'],
+		toJSON() {
+    		return "{'Title': '" + this.Title  + "', " + "'Artist': '"+this.Artist +"', "+"'Genre': '"+this.Genre+"', "+ "'Year': '"+this.Year+ "'}";
+  		}
+        
+}
+
+        
+    song_list=[song1,song2, song3, song4,song5, song6, song7,song8,song9,song10]    
+    strsongs  = JSON.stringify(song_list);	
+    jsonStudent = JSON.parse(strsongs);		//uses toJSON
+    
+	document.write(jsonStudent)
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Pet Object</title>
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
+	crossorigin="anonymous"></script>
+</head>
+
+	<script language="javascript">
+	$.get( "https://jacksonxu-hub.github.io/Songs.json", 
+			function(data) {
+				
+				str = "";
+                str+="<select id='selection' >"
+                genres= new Set()
+                song_list=new Array()
+                song_list_genre=new Array()
+                boo=[]
+				data.forEach(function(song) { 
+                    
+                    genres.add(song.Genre[0])
+                    song_l_g=song.Genre
+                    for (i=0;i<song_l_g.length;i++){
+                        song_list.push(song.Title)
+                        //console.log(song_list)
+                        song_list_genre.push(song_l_g[i])
+
+                        boo.push(song_l_g[i]=="country")
+                    }
+				}) 
+                genres_arr=Array.from(genres)
+                count=0
+                genres.forEach (function(genre) {
+                    str+=
+                    "<option selected value=" + count+ ">" +genre+"</option>"
+                    count+=1
+})
+                str+="</select>"
+                $("#output").html(str);
+                
+                $(document).ready(function(){
+            $('#b1').click(
+                function() {
+                    x =$("#selection").val();
+                    message = genres_arr[x]
+                    title_str=""
+                    console.log(message)
+                    for (i=0;i<song_list_genre.length;i++){
+                        //console.log(song_list_genre[i])
+                        console.log(String(song_list_genre[i])==message)
+                        if(String(song_list_genre[i])==message){
+                            title_str+=String(song_list[i]+"; ")
+                            
+                        }
+                    }
+                    $("#result").html(title_str);
+                })
+            })
+            
+	})
+    
+</script>
+<style>
+    .emptyspace{
+        height:200px; 
+        width:300px; 
+        border: 1px solid black;
+    }
+</style>
+     </head>
+        
+        <body>
+        
+        <input type='button' id="b1" value = "Filter">
+        <div  id='output' > </div>
+        <div class="emptyspace" id='result' > </div>
+        <div id="display"></div>
+       
+        </body>
+</html>
