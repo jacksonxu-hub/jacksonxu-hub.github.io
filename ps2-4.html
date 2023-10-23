@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>NameGender</title>
+	<meta charset="utf-8"/>
+	<script>
+		function SearchName() {
+            Name = document.getElementById('name').value;
+            url = "https://api.genderize.io?name=" + Name
+            fetch(url)
+                .then(res => res.text())
+                .then (data => 
+	            {
+                    data=JSON.parse(data)
+                    document.getElementById("display").innerHTML = 
+                            "The name " + Name + " is "+ data.probability*100+" percent likely "+ data.gender+".";	
+	            })
+	        .catch (error => console.log(error))
+		}  
+	</script>
+	<style>
+		.emptyspace{
+			height:300px; 
+			width:400px; 
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+
+	<h2>Name and Gender Probabilities</h2>
+	<div>Name: <input type = 'text'  id="name">
+	<input type = "button" value = "Enter"
+			onclick="SearchName()">
+	</div>
+	<div id="display">
+
+	</div>
+	<h3>Other Questions</h3>
+	<div class="emptyspace" id='result' > 
+		This API takes a name and returns the probability that it is a female or male names.
+		Website where I found it: https://genderize.io.
+		In order to work with this API we need to provide the name for which we want to know the 
+		corresponding gender.
+		Thie could be useful in imputing data in large surveys where respondents only indicated their
+		name but not gender. We could use this API to fill in the genders based on the likelihood that 
+		the person with this name is male/female. This could also be useful if we are trying to figure
+		out how to address the person in an email when facing a name that could be male or female when writing an email.
+	</div>
+</body>
+</html>
