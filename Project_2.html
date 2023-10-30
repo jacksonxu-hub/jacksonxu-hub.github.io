@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Events</title>
+<style type="text/css">
+.matrix {
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px 80px;
+  grid-template-rows: 80px 80px 80px 80px 80px;
+  grid-gap: 20px;
+  padding: 40px;
+
+}
+
+.row1box {
+  text-align: center;
+  padding: 40px 0;
+  border: 1px solid black;
+}
+
+.row2box {
+  text-align: center;
+  padding: 40px 0;
+  border: 1px solid black;
+}
+.row3box {
+  text-align: center;
+  padding: 40px 0;
+  border: 1px solid black;
+}
+.row4box {
+  text-align: center;
+  padding: 40px 0;
+  border: 1px solid black;
+}
+.row5box {
+  text-align: center;
+  padding: 40px 0;
+  border: 1px solid black;
+}
+.row6box {
+  text-align: center;
+  padding: 40px 0;
+  border: 1px solid black;
+}
+.correct {
+
+  background-color: green;
+}
+
+.inword{
+   background-color: yellow;
+}
+</style>
+<script>
+
+   //https://www.w3schools.com/cssref/tryit.php?filename=trycss_grid-row 
+   
+url = "https://random-word-api.herokuapp.com/word?length=5"
+            fetch(url)
+                .then(res => res.text())
+                .then (data => 
+	            {
+                    data=JSON.parse(data)
+                    indexes=[1,2,3,4,5,6]
+                    correct=data[0]
+                    console.log(correct)
+                    
+	            })
+	        .catch (error => console.log(error))
+		 
+  counter=0 
+  letters= new Set()
+
+display=true
+  Guess = () =>{
+    j=indexes[0]
+    guess_word=document.getElementById("guess").value
+    if (guess_word==correct){
+      alert("You have won!")
+      WordEnter(guess_word, j)
+      if (display==true){
+        document.getElementById("new").style.display="block"
+    }
+     // document.getElementById("new").display = "block";
+    }
+    else if(guess_word!=correct && counter==5){
+      alert("You didn't get it. The correct answer is "+correct)
+    }
+    else if (counter<6){
+      WordEnter(guess_word, j)
+    
+    }
+    x=indexes.shift()
+    counter+=1
+  }
+  function Element(index){
+    this.index=index
+    this.reindx=function(){
+      return this.index
+    }
+  }
+  Elements=[new Element(1),new Element(2),new Element(3),new Element(4),new Element(5),new Element(6)]
+  function NewGame(){
+    row_array=[1,2,3,4,5,6]
+        row_array.forEach((i)=>{
+        for (j=1;j<6;j++){
+          document.getElementById(String(j)+String(i)).classList.remove("correct");
+          document.getElementById(String(j)+String(i)).classList.remove("inword");
+          document.getElementById(String(j)+String(i)).innerHTML="";
+         // console.log("<div class='row"+String(i)+"box' "+ "id="+String(i)+String(j)+"></div>")
+         }
+      })
+    
+      url = "https://random-word-api.herokuapp.com/word?length=5"
+            fetch(url)
+                .then(res => res.text())
+                .then (data => 
+	            {
+                    data=JSON.parse(data)
+                    indexes=[1,2,3,4,5,6]
+                    correct=data[0]
+                    console.log(correct)
+                    
+	            })
+	        .catch (error => console.log(error))
+		 
+  counter=0 
+  letters= new Set()
+  }
+  
+   function WordEnter(guess_word, j){
+                matched_letters=[]
+                if(guess_word.length!=5){
+                  alert("Please enter a five-letter word!")
+                }
+                else{
+                  for (i=0;i<5;i++){
+                    letters.add(guess_word[i])
+                  }
+                  for (i=1;i<6;i++){
+                  document.getElementById(String(j)+String(i)).innerHTML=guess_word[i-1].toUpperCase()
+                  if (guess_word[i-1]==correct[i-1]){
+                     document.getElementById(String(j)+String(i)).className += " correct";
+                     matched_letters.push(guess_word[i-1])
+                  }
+                }    
+                for (i=1;i<6;i++){
+                if(correct.includes(guess_word[i-1])&& matched_letters.includes(guess_word[i-1])==false){
+                     document.getElementById(String(j)+String(i)).className += " inword";
+                  }     
+                }
+          }
+          document.getElementById("result").innerHTML=""
+          letters_arr=Array.from(letters)
+      letters_arr.forEach((let) =>{
+        document.getElementById("result").innerHTML +=let.toUpperCase()+", "
+})
+        }
+        
+
+</script>
+<style>
+  .emptyspace{
+    height:300px; 
+    width:400px; 
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+   
+   <div class="matrix">
+      <script>
+        
+        Elements.forEach((ele)=>{
+        for (j=1;j<6;j++){
+          document.write("<div class='row"+ele.reindx()+"box' "+ "id="+String(ele.reindx())+String(j)+"></div>")
+        }
+      })
+      </script>
+    </div>
+    <form >
+            
+      <label text-align="right" for="nam">Enter your guess here:</label>
+      <input type="text" id="guess" value="">
+      
+      <input type='button' value="Enter"
+       onclick="Guess()" >
+       <input type='button' id="new" value="New Game"
+       onclick="NewGame()" >
+  </form>
+  <h3>Used Letters Board</h3>
+  <div class="emptyspace" id='result' > 
+		</div>
+    
+</body>
+</html>
